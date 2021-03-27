@@ -1,0 +1,58 @@
+from IPython.display import clear_output
+import random
+def check_range(number):
+    if number in range(n-5,n):
+        print("You are too close. Try Again.")
+    elif number in range(n+1,n+7):
+        print("You are too close. Try Again. ")
+    elif number in range(n-10,n-5):
+        print("You are close. Try Again. ")
+    elif number in range(n+7,n+11):
+        print("You are close. Try Again")
+    elif number in range(1,n-10):
+        print("You are too far. Try Again. ")
+    elif number in range(n+11,100):
+        print("You are too far. Try Again. ")
+       
+    elif number<1:
+        print("Invalid guess! Try Again. ")
+       
+    elif number>100:
+        print("Invalid guess! Try Again. ")
+       
+    elif number==n:
+        print("You Won!")
+    else:
+        pass
+print("GUESS THE NUMBER BETWEEN 1 to 100")
+print("YOU HAVE 10 ATTEMPTS.")
+print("Let's play!")
+game_on = True
+while game_on:
+    
+    choice = input("Do you want to play. Enter Y or N only: ")
+    
+    if choice== "Y":
+        m = 10
+        print(f"You have only 10 attempts.")
+        n = random.randint(1,101)
+        user_guess = int(input("Guess the number between 1 to 100: "))
+        while user_guess!=n:
+            if m>1:
+                print(f"You have {m-1} attempts")
+                check_range(user_guess)
+                m-=1
+                user_guess = int(input("Guess the number (1 to 100): "))
+                continue
+            else:
+                print("You Lost!!")
+                print(f"Correct answer is {n}")
+                break
+        else:
+            print("You Won!!")
+    else:
+        game_on = False
+        print("Game Over!")
+            
+else:
+     game_on = False
