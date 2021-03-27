@@ -48,11 +48,12 @@ while game_on:
                 print("You Lost!!")
                 print(f"Correct answer is {n}")
                 break
-        else:
-            print("You Won!!")
-    else:
+    elif choice == "N":
         game_on = False
         print("Game Over!")
+    else:
+        print("Invalid choice. Please enter Y or N ")
+        pass
             
 else:
      game_on = False
