@@ -1,0 +1,26 @@
+#to print a pattern
+#if 1 i.e True
+#*
+#**
+#***
+#if 0 i.e False
+#***
+#**
+#*
+#take an integer input
+#print the pattern according in the number of rows that you have given as an input
+
+number = int(input("enter the number   "))
+num1 = 1
+num2 = 0
+
+boolean_value = int(input("enter 1 or 0   "))
+if boolean_value == True:
+    while num1<=number:
+        print(num1*"*")
+        num1+=1
+elif boolean_value == False:
+    while num2<=number:
+        m = number - num2
+        print(m*"*")
+        num2+=1
