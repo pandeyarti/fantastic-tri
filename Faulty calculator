@@ -1,0 +1,64 @@
+#This is a function which sets some calculations wrong. If a user inputs these numbers and the answer is same. We'll know that the user used this calculator.
+def check_fault(first_num,second_num,choose_operator):
+        if first_num == 55 and second_num == 13 and choose_operator == '*':
+            result1 = 700
+            return result1
+        elif first_num == 25 and second_num == 5 and choose_operator == '*':
+            result1 = 126
+            return result1
+        elif first_num == 79 and second_num == 5 and choose_operator == '+':
+            result1 = 87
+            return result1
+        else:
+            pass
+#to choose an operator. If user inputs a wrong option, the program will prompt you to give your input again.
+def check_op(choose_operator):
+    list_operator = ['+','-','*','%','/']
+    while choose_operator not in list_operator:
+        print("try again")
+        choose_operator = input("enter the operator: ")
+    else:
+        pass
+#To perform calculations
+def calculate(choose_operator,first_num,second_num):
+    if choose_operator == '+':
+        result = first_num + second_num
+        return result
+    elif choose_operator == '-':
+        result = first_num - second_num
+        return result
+    elif choose_operator == '*':
+        result = first_num * second_num
+        return result
+    elif choose_operator == '/':
+        result = first_num * second_num
+        return result
+    elif choose_operator == '%':
+        result = first_num % second_num
+        return result
+    else:
+        pass
+        
+#design a calculator which will correctly solve all the problems except the follwing ones:-
+#55*13 = 700, 25*5 = 126, 79+5 = 87
+
+game_on = True
+while game_on:
+    user_choice = input("Do you want to play this game? Y or N ")
+    if user_choice.upper() == 'Y':
+        first_num = int(input("enter the first number\n "))
+        choose_operator = input("enter the operator\n")
+        check_op(choose_operator)
+        second_num = int(input("enter the second number: "))
+        result1 = check_fault(first_num,second_num,choose_operator)
+        result2 = calculate(choose_operator,first_num,second_num)
+        x = [700,126,87]
+        if result1 not in x:
+            print(result2)
+        else:
+            print(result1)
+    elif user_choice.upper() == 'N':
+        game_on = False
+    else:
+        print("Invalid!! Try again!")
+        pass
